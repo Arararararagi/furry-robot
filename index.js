@@ -1,4 +1,11 @@
 window.onload = function() {
+	$('input[type="number"]').focus(function() {
+    	$(this).addClass("focus");
+    });
+
+	$('input[type="number"]').blur(function() {
+	    $(this).removeClass("focus");
+	});
 	//Perpetuity
 
 	$("#Capitalper").keyup(function () {
@@ -16,37 +23,17 @@ window.onload = function() {
 		})
 	}).keyup();
 
-/*
+
 	//Annuity
 
-	$("#Capital").keyup(function () {
-		$("#interest").keyup(function () {
-			$("#periods").keyup(function () {
-				var periods = $("#periods").val();
-				var capital = $("#Capital").val();
-				var interest = $("#interest").val();
-				$("#PVannuity").text((capital/interest)*(1-(1/Math.pow(1+interest, periods))));
-			})
-		})
-	}).keyup();
-	$("#interest").keyup(function () {
-		$("#Capital").keyup(function () {
-			$("#periods").keyup(function () {
-				var periods = $("#periods").val();
-				var capital = $("#Capital").val();
-				var interest = $("#interest").val();
-				$("#PVannuity").text((capital/interest)*(1-(1/Math.pow(1+interest, periods))));
-			})
-	}).keyup();
-*/
-
-	$('input[type="number"]').focus(function() {
-    $(this).addClass("focus");
+$("#button").click(function(){
+			var periods = $("#periodsann").val();
+			var capital = $("#Capitalann").val();
+			var interest = $("#interestann").val();
+			$("#PVannuity").text((capital/(interest/100))*(1-(1/Math.pow(1+(interest/100),periods))));
 
 
 });
  
-$('input[type="number"]').blur(function() {
-    $(this).removeClass("focus");
-});
+
 }
