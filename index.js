@@ -26,11 +26,11 @@ window.onload = function() {
 
 	//Annuity
 
-$("#button").click(function(){
-			var periods = $("#periodsann").val();
-			var capital = $("#Capitalann").val();
-			var interest = $("#interestann").val();
-			$("#PVannuity").text((capital/(interest/100))*(1-(1/Math.pow(1+(interest/100),periods))));
+	$("#button").click(function(){
+		var periods = $("#periodsann").val();
+		var capital = $("#Capitalann").val();
+		var interest = $("#interestann").val();
+		$("#PVannuity").text((capital/(interest/100))*(1-(1/Math.pow(1+(interest/100),periods))));
 
 
 });
