@@ -4,21 +4,47 @@
 	<meta charset="UTF-8">
 	<title>Furry Robot • フーリ ロボット</title>
 	<script type="text/javascript" src="index.js"></script>
-	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 <body>
-	<h1 id="title">Furry Robot</h1>
-	<p><h2 id="subtitle">フーリ ロボット</h2></p>
-	<p></p>
+<!---------- title ---------->
 
-<h3>Perpetuity Calculator</h3>
-<form id="perpetuity">
-<span class="type">Capital:</span> <input type="number" id="Capital">
-<p></p>
-<span class="type">Interest Rate:</span> <input type="number" id="interest">
-<p></p>
-<span class="type">Present Value:</span> <span id="PV"></span>$
-</form>
+		<div id="head">
+			<h1 id="title">Furry Robot</h1>
+		<p>
+			<h2 id="subtitle">フーリ ロボット</h2>
+		</p>
+		</div>
+		<p></p>
+
+
+<!---------- page ---------->
+	<div class="container">
+		<div id="Perpetuity" class="page">
+			<h3>Perpetuity Calculator</h3>
+			<form id="perpetuity">
+				<span class="type">Capital:</span> <input type="number" id="Capitalper">
+			<p></p>
+				<span class="type">Interest Rate (%):</span> <input type="number" id="interestper">
+			<p></p>
+				<span class="type">Present Value: </span><span id="PVperpetuity"></span> $
+			</form>
+		</div>
+
+		<div id="Annuity" class="page">
+			<h3>Annuity Calculator</h3>
+			<form id="perpetuity">
+				<span class="type">Capital:</span> <input type="number" id="Capital">
+			<p></p>
+				<span class="type">Nominal Interest Rate (%):</span> <input type="number" id="interest">
+			<p></p>
+				<span class="type">Number of periods:</span> <input type="number" id="periods">
+			<p></p>
+				<span class="type">Present Value: </span><span id="PVannuity"></span> $
+			</form>
+
+
+	</div>
 </body>
 </html>

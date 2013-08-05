@@ -2,7 +2,7 @@
 	font-family: Verdana;
 	font-size: 20px;
 	text-align:center;
-	text-shadow: 5px 5px 5px #a52a2a ;
+	text-shadow: 5px 5px 5px #a52a2a;
 }
 
 #subtitle {
@@ -13,5 +13,50 @@
 }
 
 .type {
-	
+	color: #FF9900;
+}
+
+input {
+	border: 2px solid #AA88FF;
+}
+
+.focus {
+    border: 2px solid #FF9900;
+    background-color: #FFEEAA;
+}
+
+body {
+	background-repeat: repeat;
+	background-image:url(http://docs.webplatform.org/w/skins/webplatform/images/bg-pattern.png);
+}
+
+#head {
+	width: 200px;
+	background:#f9f7f3;
+	border-radius:5px;
+	box-shadow:0 0 1px #a7a9ac;
+	margin-bottom:20px;
+	position:relative;
+	margin:auto;
+}
+
+.page{
+	background:#f9f7f3;
+	border-radius:5px;
+	box-shadow:0 0 1px #a7a9ac;
+	margin-bottom:20px;
+}
+
+
+.container{
+	position:relative;
+	width:950px;
+	margin: auto;
+}
+@media screen and (max-width:950px){
+	.container{
+		padding:0 10px;
+		width:auto
+		}
+	}
 }
