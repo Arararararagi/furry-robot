@@ -1,3 +1,10 @@
+var objPage = null;
+function showPage(pageName) {
+if (objPage) objPage.style.display = 'none';
+	objPage=document.getElementById(pageName);
+objPage.style.display = 'block';
+};
+
 window.onload = function() {
 	$('input[type="number"]').focus(function() {
     	$(this).addClass("focus");
@@ -6,6 +13,9 @@ window.onload = function() {
 	$('input[type="number"]').blur(function() {
 	    $(this).removeClass("focus");
 	});
+
+	showPage("home")
+
 	//Perpetuity
 
 	$("#Capitalper").keyup(function () {

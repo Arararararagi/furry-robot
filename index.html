@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Furry Robot • フーリ ロボット</title>
+	<title>Furry Robot • ファリー・ロボット</title>
 	<script type="text/javascript" src="index.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="index.css"/>
@@ -13,14 +13,43 @@
 		<div id="head">
 			<h1 id="title">Furry Robot</h1>
 		<p>
-			<h2 id="subtitle">フーリ ロボット</h2>
+			<h2 id="subtitle">ファリー・ロボット</h2>
 		</p>
 		</div>
 		<p></p>
 
 
+
+<!---------- menu ---------->
+
+	<div id='cssmenu'>
+	<ul>
+	   <li><a href='../'><span>Home</span></a></li>
+	   <li class='has-sub'><a href='#'><span>Calculators</span></a>
+	      <ul>
+	         <li class='has-sub'><a href='#'><span>Annuity</span></a>
+	            <ul>
+	               <li><a href="javascript:showPage('Annuity')"><span>Annuity</span></a></li>
+	               <li class='last'><a href='#'><span>Growing Annuity</span></a></li>
+	            </ul>
+	         </li>
+	         <li class='has-sub'><a href='#'><span>Perpetuity</span></a>
+	            <ul>
+	               <li><a href="javascript:showPage('Perpetuity')"><span>Perpetuity</span></a></li>
+	               <li class='last'><a href='#'><span>Growing Perpetuity</span></a></li>
+	            </ul>
+	         </li>
+	      </ul>
+	   </li>
+	   <li class='last'><a href="javascript:showPage('About')"><span>About & Contact</span></a></li>
+	</ul>
+	</div>
+
 <!---------- page ---------->
 	<div class="container">
+		<div id="home" class="page">
+			Hi. Choose an option in the menu above. This is a work in progress.
+		</div>
 		<div id="Perpetuity" class="page">
 			<h3>Perpetuity Calculator</h3>
 			<form id="perpetuity">
@@ -43,8 +72,15 @@
 			<p></p>
 				<span class="type">Present Value: </span><span id="PVannuity"></span> $ 
 			</form>
+		</div>
 
-
+		<div id="About" class="page">
+				<h3>About meself</h3>
+				<img id="Araragi" src="http://i6.minus.com/ilhC7BO81ayVs.jpg"></img>
+				Hi, I'm me, Araragi-kun. The pic is my portrait. Yes, I always carry around that sword as big as my <span style="color: black;" class="spoiler" onmouseover="this.style.color='white';" onmouseout="this.style.color='black'">ego</span>.
+				<p></p>
+				Find my on <a href="https://github.com/Arararararagi/furry-robot" title="Arararararagi's Furry Robot" alt="Arararararagi's Furry Robot">Github</a> or by <a href="mailto:furryrobot@outlook.com">email</a> if you want to make suggestions or report any bugs.
+		</div>
 	</div>
 </body>
 </html>
