@@ -1,9 +1,35 @@
+.hello {
+  display:inline-block;
+  margin:5px 20px;
+  padding:5px;
+  text-align: center;
+}
+
+#captation {
+  text-align: center;
+}
+
 #Araragi {
 	height: 280px;
 	display: inline;
 	float: right;
 	margin: 10px auto;
 	padding: 0px 10px 0px 10px;
+}
+
+#img {
+  display: inline-block;
+  margin: 8px 8px 2px 3px;
+  margin-top: 8px;
+  margin-right-value: 8px;
+  margin-bottom: 2px;
+  margin-left-value: 3px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  vertical-align: top;
+  height: 280px;
+  max-width: 400px;
 }
 
 #title {
