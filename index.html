@@ -5,16 +5,19 @@
 	<title>Furry Robot • ファリー・ロボット</title>
 	<script type="text/javascript" src="index.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript" charset="utf-8" src="banner.js"></script>
 	<link rel="stylesheet" type="text/css" href="index.css"/>
+	<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}}); </script>
+</script>
 </head>
 <body>
 <!---------- title ---------->
 
 		<div id="head">
-			<h1 id="title">Furry Robot</h1>
-		<p>
-			<h2 id="subtitle">ファリー・ロボット</h2>
-		</p>
+			<img id="banner"></img>
 		</div>
 		<p></p>
 
@@ -24,23 +27,24 @@
 
 	<div id='cssmenu'>
 	<ul>
-	   <li><a href='../'><span>Home</span></a></li>
+	   <li><a href="javascript:showPage('home')"><span>Home</span></a></li>
 	   <li class='has-sub'><a href='#'><span>Calculators</span></a>
 	      <ul>
 	         <li class='has-sub'><a href='#'><span>Annuity</span></a>
 	            <ul>
 	               <li><a href="javascript:showPage('Annuity')"><span>Annuity</span></a></li>
-	               <li class='last'><a href='#'><span>Growing Annuity</span></a></li>
+	               <li class='last'><a href="javascript:showPage('Growing Annuity')"><span>Growing Annuity</span></a></li>
 	            </ul>
 	         </li>
 	         <li class='has-sub'><a href='#'><span>Perpetuity</span></a>
 	            <ul>
 	               <li><a href="javascript:showPage('Perpetuity')"><span>Perpetuity</span></a></li>
-	               <li class='last'><a href='#'><span>Growing Perpetuity</span></a></li>
+	               <li class='last'><a href="javascript:showPage('Growing Perpetuity')"><span>Growing Perpetuity</span></a></li>
 	            </ul>
 	         </li>
 	      </ul>
 	   </li>
+		<li><a href="javascript:showPage('other')"><span>Other (more difficult) materials</span></a></li>
 	   <li class='last'><a href="javascript:showPage('About')"><span>About & Contact</span></a></li>
 	</ul>
 	</div>
@@ -48,25 +52,26 @@
 <!---------- page ---------->
 	<div class="container">
 		<div id="home" class="page">
-			<div id="meido" class="hello">
-				<div id="img">
-					<img id="img" src="http://i.minus.com/ioQzqkStwTHCf.gif" alt="お帰り、御主人様。"></img>
+			<div id="greeting">
+				<div id="meido" class="hello">
+					<div id="img">
+						<img id="img" src="http://i.minus.com/ioQzqkStwTHCf.gif" alt="お帰り、御主人様。"></img>
+					</div>
+					<div id="captation">
+						Okaeri, Goshujinsama.
+					</div>
 				</div>
-				<div id="captation">
-					Okaeri, Goshujinsama.
+				<div id="Sebastian" class="hello">
+					<div id="img">
+						<img id="img" src="http://i1.minus.com/iqdmTeLvINy6X.png" alt="お帰り、御主人様。"></img>
+					</div>
+					<div id="captation">
+						You will be in good hands, Master, for I am one hell of a butler.
+					</div>
 				</div>
 			</div>
-			<div id="Sebastian" class="hello">
-				<div id="img">
-					<img id="img" src="http://i1.minus.com/iqdmTeLvINy6X.png" alt="お帰り、御主人様。"></img>
-				</div>
-				<div id="captation">
-					You will be in good hands, Master, for I am one hell of a butler.
-				</div>
-			</div>
-			<p>
+			<p></p>
 			Hi. Choose an option in the menu above. This is a work in progress.
-			</p>
 		</div>
 		<div id="Perpetuity" class="page">
 			<h3>Perpetuity Calculator</h3>
@@ -77,21 +82,112 @@
 			<p></p>
 				<span class="type">Present Value: </span><span id="PVperpetuity"></span> $
 			</form>
-		</div>
+			<div class="equation">
+				How does it work? It just <em>werks</em>.
+				<p></p>
+				If you get paid exactly the same ammount every period for, like, ever, each period you will get less and less, in present value, like so:
+				<p></p>
+				\[PV= \frac{C}{1+r} + \frac{C}{(1+i)^2} + \frac{C}{(1+i)^3} + ... + \frac{C}{{(1+i)}^{n}}\]
 
+				<p></p>
+
+				<!-- OMG JS IS AWESOME! -->
+
+				Can also be written as
+				\[\sum_{k=1}^{\infty }\frac{C}{(1+i)^{k}}\]
+			</div>
+				</p>
+				As we all learned (right?), the sum of a geometric series is given by... ok, we can prove it real quick. Let's call $\frac{1}{1+i}$ simply $r$ and . Hence, we have
+				\[\sum_{k=1}^{\infty }Cr^{k}\]
+				Let's expand this.
+				\[\sum_{k=1}^{\infty }Cr^{k}=Cr + Cr^2 + Cr^3 + ... + Cr^n\]
+				Now, again, for simplification purposes, let's give the letter $S$ to $\sum_{k=1}^{\infty }Cr^{k}$ 
+				\[S=Cr + Cr^2 + Cr^3 + ... + Cr^n\]
+				Now, let's get busy. We'll start by multiplying by $r$ on both sides.
+				\[S=Cr+Cr^2+Cr^3+...+Cr^{n}\Leftrightarrow Sr=Cr^2+Cr^3+...+Cr^{n+1}\]
+				Let's subtract $S$ on both sides. Because $S$ equals the sum of that lovely Geometric progression (Don't you love series? Me neither.), we get this:
+				\[Sr-S=\left [Cr^2+Cr^3+...+Cr^{n+1} \right ]-\left [Cr+Cr^2+...+Cr^{n} \right ]\Leftrightarrow\]
+				\[S(r-1)=Cr^{n+1}-Cr\]
+				Do you see where we are getting at? We're close.
+				\[S(r-1)=Cr^{n+1}-Cr\Leftrightarrow S(r-1)=C(r^{n+1}-r)\Leftrightarrow S=C\frac{r^{n+1}-r}{r-1}\Leftrightarrow -S=C\frac{r^{n+1}-r}{1-r}\]
+
+				\[\mid r \mid=\left |\frac{1}{1+i} \right | < 1, \: so, \lim_{n\rightarrow \infty} Cr^{n+1}=0\]
+				\[-S=\frac{-Cr}{1-r}\Leftrightarrow S=\frac{Cr}{1-r} = \frac{C\frac{1}{1+i}}{1-(\frac{1}{1+i})}\]
+				Hang in there!
+				\[\frac{C\frac{1}{1+i}}{\frac{1+i-1}{1+i}}\Leftrightarrow \frac{\frac{C}{1+i}}{\frac{i}{1+i}}\Leftrightarrow \frac{C}{i}\]
+				Ta-freaking-Dah!
+
+				</p>
+		</div>
 		<div id="Annuity" class="page">
 			<h3>Annuity Calculator</h3>
-			<form id="perpetuity">
+			<form id="annuity">
 				<span class="type">Capital:</span> <input type="number" value="1000" id="Capitalann">
 			<p></p>
-				<span class="type">Nominal Interest Rate (%):</span> <input type="number" value="5" id="interestann">
+				<span class="type">Interest Rate (%):</span> <input type="number" value="5" id="interestann">
 			<p></p>
-				<span class="type">Number of periods:</span> <input type="number" value="10" id="periodsann"> <div id="button">Calculate</div>
+				<span class="type">Number of periods:</span> <input type="number" value="10" id="periodsann">
+				<div id="button" class="button">Calculate</div>
 			<p></p>
 				<span class="type">Present Value: </span><span id="PVannuity"></span> $ 
 			</form>
-		</div>
+			<div class="equation">
+				\[PV=\frac{C}{i}\times \left ( 1-\frac{1}{{(1+i)}^{n}} \right )\]
+				<p></p>
 
+				Remember how we (I did, anyway) proved the formula for the perpetuity? If not, check it out. If yes, the idea is the same, but this time, instead of an infinite number of periods, the number of periods is finite.
+				\[\sum_{k=1}^{n}Cr^{k},\: r=\frac{1}{1+i}\]
+			</div>
+				For now, it's the same as always. Let's expand again.
+				\[\sum_{k=1}^{n}Cr^{k}=Cr + Cr^2 + Cr^3 + ... + Cr^n\]
+				And now let's replace that sigma by $S$ again and multiply by $r$ on both sides.
+				\[S=Cr+Cr^2+Cr^3+...+Cr^{n}\Leftrightarrow Sr=Cr^2+Cr^3+...+Cr^{n+1}\]
+				Now we'll subtract $S$ on both sides.
+				\[Sr-S=\left [Cr^2+Cr^3+...+Cr^{n+1} \right ]-\left [Cr+Cr^2+...+Cr^{n} \right ]\Leftrightarrow\]
+				\[S(r-1)=Cr^{n+1}-Cr\Leftrightarrow S(1-r)=Cr-Cr^{n+1}\]
+				But, Araragi-kun, what the hell are you doing? You are doing the same thing you did with Perpetuity, baka!
+				<p></p>
+				I know, I know. Wait a bit. With the Perpetuity, we used the limit of ${Cr}^{n}$ then $n$ approaches $\infty$, which is 0. Here, $n$ does not approach infinity, as it is a finite number, as I said.
+				\[S=\frac{Cr-Cr^{n+1}}{1-r}\Leftrightarrow S=C\frac{r-r^{n+1}}{1-r}\Leftrightarrow S=C\frac{\frac{1}{1+i}-(\frac{1}{1+i})^{n+1}}{\frac{1+i}{1+i}-\frac{1}{1+i}}=\frac{C}{i}\frac{\frac{1}{1+i}-(\frac{1}{1+i})^{n+1}}{\frac{1}{1+i}}\]
+				Whoa, what a mess.
+				\[S=\frac{C}{i}\frac{\frac{1}{1+i}-(\frac{1}{1+i})^{n+1}}{\frac{1}{1+i}}\Leftrightarrow S=\frac{C}{i}\left ( 1-\left (\frac{1}{1+i} \right )^n \right )\]
+				$1^n=1$
+				\[PV=\frac{C}{i}\left (1-\frac{1}{(1+i)^n} \right )\]
+				Yay.
+		</div>
+		<div id="Growing Annuity" class="page">
+			<h3>Growing Annuity Calculator</h3>
+			<form id="annuityg">
+				<span class="type">Capital:</span> <input type="number" value="1000" id="Capitalgann">
+			<p></p>
+				<span class="type">Interest Rate (%):</span> <input type="number" value="5" id="interestgann">
+			<p></p>
+				<span class="type">Growth Rate (%):</span> <input type="number" value="2" id="growthgann">
+			<p></p>
+				<span class="type">Number of periods:</span> <input type="number" value="10" id="periodsgann">
+				<div id="button1" class="button">Calculate</div>
+			<p></p>
+				<span class="type">Present Value: </span><span id="PVannuityg"></span> $ 
+			</form>
+		</div>
+		<div id="Growing Perpetuity" class="page">
+			<form id="perpetuityg">
+				<span class="type">Capital:</span> <input type="number" value="1000" id="Capitalgper">
+			<p></p>
+				<span class="type">Interest Rate (%):</span> <input type="number" value="5" id="interestgper">
+			<p></p>
+				<span class="type">Growth Rate (%):</span> <input type="number" value="2" id="growthgper">
+			<p></p>
+				<div id="button2" class="button">Calculate</div>
+			<p></p>
+				<span class="type">Present Value: </span><span id="PVperpetuityg"></span> $ 
+			</form>
+		</div>
+		<div id="other" class="page">
+			<iframe width="853" height="480" src="https://www.youtube.com/embed/L0DTHEQgses?autoplay=1&rel=0&start=5" frameborder="0" allowfullscreen></iframe>
+
+			Desculpa, é a verdade.
+		</div>
 		<div id="About" class="page">
 				<h3>About meself</h3>
 				<img id="Araragi" src="http://i6.minus.com/ilhC7BO81ayVs.jpg"></img>

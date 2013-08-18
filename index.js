@@ -14,7 +14,7 @@ window.onload = function() {
 	    $(this).removeClass("focus");
 	});
 
-	showPage("home")
+	showPage("home");
 
 	//Perpetuity
 
@@ -45,5 +45,23 @@ window.onload = function() {
 
 });
  
+ 	//Growing Annuity
+
+ 	$("#button1").click(function(){
+ 		var periods = $("#periodsgann").val();
+ 		var capital = $("#Capitalgann").val();
+ 		var interest = $("#interestgann").val();
+ 		var growth = $("#growthgann").val();
+ 		$("#PVannuityg").text((capital/((interest-growth)/100))*(1-Math.pow((1+growth/100)/(1+interest/100),periods)));
+ 	});
+
+ 	//Growing Perpetuity
+
+ 	$("#button2").click(function(){
+ 		var capital = $("#Capitalgper").val();
+ 		var interest = $("#interestgper").val();
+ 		var growth = $("#growthgper").val();
+ 		$("#PVperpetuityg").text(capital/((interest-growth)/100));
+ 	});
 
 }
