@@ -16,7 +16,7 @@ window.onload = function() {
 
 	showPage("home");
 
-	//Perpetuity
+	/*//Perpetuity
 
 	$("#Capitalper").keyup(function () {
 		$("#interestper").keyup(function () {
@@ -31,8 +31,12 @@ window.onload = function() {
 			var interest = $("#interestper").val();
 			$("#PVperpetuity").text(((capital/interest)*100));
 		})
-	}).keyup();
-
+	}).keyup();*/
+	("$perpetuity").key(function(){
+			var capital = $("#Capitalper").val();
+			var interest = $("#interestper").val();
+			$("#PVperpetuity").text((capital/interest)*100);
+	}).change();
 
 	//Annuity
 
